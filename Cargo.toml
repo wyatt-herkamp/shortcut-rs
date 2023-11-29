@@ -1,0 +1,37 @@
+[package]
+name = "shortcut-rs"
+version = "0.1.0"
+edition = "2021"
+description = "A library for creating and manipulating desktop shortcuts."
+license = "MIT or Apache-2.0"
+repository = "https://github.com/wyatt-herkamp/shortcut-rs"
+readme = "README.md"
+keywords = []
+categories = []
+authors = ["Wyatt Herkamp <wherkamp@gmail.com"]
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+thiserror = "1"
+log = "0.4"
+cfg-if = "1.0"
+[target.'cfg(target_os="windows")'.dependencies]
+windows = { version = "0.52", features = [
+    "Win32_Foundation",
+    "Win32_System_Com",
+    "Win32_System_Com_StructuredStorage",
+    "Win32_System_Threading",
+    "Win32_Storage_FileSystem",
+    "Win32_Storage_EnhancedStorage",
+    "Win32_UI_Controls",
+    "Win32_UI_Shell",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_UI_Controls_Dialogs",
+    "Foundation",
+    "Foundation_Collections",
+    "Data_Xml_Dom",
+    "Win32_System_Variant",
+    "UI_ViewManagement",
+] }
